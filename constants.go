@@ -8,14 +8,14 @@ package main
 const (
 	versionNest                 = "0.37"
 	urlCryptoCompareTRTL        = "https://min-api.cryptocompare.com/data/price?fsym=TRTL&tsyms=USD"
-	logFileFilename             = "TurtleCoin-Nest.log"
-	urlBlockExplorer            = "https://blocks.turtle.link/"
+	logFileFilename             = "AnonCoin-Nest.log"
+	urlBlockExplorer            = "http://explorer.anoncoin.tech/"
 	dbFilename                  = "settings.db"
 	numberTransactionsToDisplay = 20
 
 	// default remote node
-	defaultRemoteDaemonAddress = "public.turtlenode.online"
+	defaultRemoteDaemonAddress = "explorer.anoncoin.tech"
 	defaultRemoteDaemonPort    = "11898"
-	defaultRemoteDaemonName    = "public.turtlenode.online"
+	defaultRemoteDaemonName    = "explorer.anoncoin.tech"
 	defaultRemoteDaemonSSL     = false
 )

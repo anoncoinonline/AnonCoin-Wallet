@@ -17,8 +17,8 @@ Dialog {
     standardButtons: StandardButton.Ok
     width: 900
 
-    property var addressDev: "TRTLv3jzutiQwqHL3qFwsu5EVLWesxZr1AFQ4AuMR3SD56n3rkHDkwj79eKwvaiU1nYQWGydKoXM6fXyiiGKsPDnVCNXzNdusxx"
-    property var websiteChat: "http://chat.turtlecoin.lol"
+    property var addressDev: "WEAKEYMSmeqRgohyAGLeg73oGrfh2c5SQHBYSfMu4St3jNVk1BzoHryfsTjUKVeKTnZ9JJq3xvc5tCuhmYe2CHU58LTH7UPTaA"
+    property var websiteChat: "http://chat.weakness-coin.com"
     property var versionNest: ""
     property var newVersionNestAvailable: ""
     property var urlNewVersionNest: ""

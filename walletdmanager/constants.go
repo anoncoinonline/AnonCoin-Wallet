@@ -9,11 +9,11 @@ const (
 	// DefaultTransferFee is the default fee. It is expressed in TRTL
 	DefaultTransferFee float64 = 0.1
 
-	logWalletdCurrentSessionFilename     = "turtle-service-session.log"
-	logWalletdAllSessionsFilename        = "turtle-service.log"
-	logTurtleCoindCurrentSessionFilename = "TurtleCoind-session.log"
-	logTurtleCoindAllSessionsFilename    = "TurtleCoind.log"
+	logWalletdCurrentSessionFilename     = "anon-service-session.log"
+	logWalletdAllSessionsFilename        = "anon-service.log"
+	logTurtleCoindCurrentSessionFilename = "AnonCoind-session.log"
+	logTurtleCoindAllSessionsFilename    = "AnonCoind.log"
 	walletdLogLevel                      = "3" // should be at least 3 as I use some logs messages to confirm creation of wallet
-	walletdCommandName                   = "turtle-service"
-	turtlecoindCommandName               = "TurtleCoind"
+	walletdCommandName                   = "anon-service"
+	turtlecoindCommandName               = "AnonCoind"
 )
