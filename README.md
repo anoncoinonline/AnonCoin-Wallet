@@ -1,6 +1,6 @@
-# AnonCoin Nest
+# AnonTech Nest
 
-The universal desktop GUI wallet for AnonCoin
+The universal desktop GUI wallet for AnonTech
 
 ![Logo](https://github.com/anoncoinonline/anontech-wallet-go/blob/master/anontech.png)
 
