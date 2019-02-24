@@ -2,7 +2,7 @@
 
 The universal desktop GUI wallet for AnonCoin
 
-![Logo](https://github.com/anoncoinonline/AnonCoin/blob/development/src/Wallet/anoncoin.png)
+![Logo](https://github.com/anoncoinonline/anontech-wallet-go/blob/master/anontech.png)
 
 ## Installation
 
